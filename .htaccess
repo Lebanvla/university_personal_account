@@ -1,0 +1,12 @@
+# /var/www/html/.htaccess
+
+RewriteEngine On
+RewriteBase /
+
+# Разрешаем только /assets/
+RewriteCond %{REQUEST_URI} ^/assets/ [NC]
+RewriteRule ^ - [L]
+
+# Всё остальное (кроме /public/) направляем в public/index.php
+RewriteCond %{REQUEST_URI} !^/public/ [NC]
+RewriteRule ^ public/index.php [L,QSA]

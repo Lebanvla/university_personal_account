@@ -1,0 +1,8 @@
+/vendor/
+composer.lock
+/logs/
+*.log
+/assets/*
+!/assets/css/
+!/assets/js/
+/public/uploads/

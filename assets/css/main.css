@@ -1,0 +1,5 @@
+.error_description_block {
+  display: none;
+  background-color: red;
+  color: white;
+}

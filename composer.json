@@ -1,0 +1,14 @@
+{
+  "name": "vendor/my-project",
+  "description": "Students personal account realisation",
+  "type": "project",
+  "require": {
+    "pecee/simple-router": "^5.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Model\\": "src/Model/",
+      "Controllers\\": "src/Controllers/"
+    }
+  }
+}
