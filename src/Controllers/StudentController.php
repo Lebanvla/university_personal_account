@@ -9,7 +9,13 @@ class StudentController extends Controller
 {
     public function profile()
     {
-        $this->view("user", ["user" => "Lebanvla"]);
+        $this->view("user", [
+            "id" => $_SESSION["id"],
+            "family" => $_SESSION["family"],
+            "name" => $_SESSION["name"],
+            "patronymic" => $_SESSION["patronymic"],
+            "group_id" => $_SESSION["group_id"]
+        ]);
     }
 
     public function getStudyPlan()

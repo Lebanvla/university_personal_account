@@ -6,6 +6,7 @@ function student_routes()
 {
 
     SimpleRouter::get('/', 'StudentController@profile');
+    SimpleRouter::get('/student_plan', 'StudentController@getStudyPlan');
 }
 
 

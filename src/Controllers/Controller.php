@@ -8,7 +8,7 @@ class Controller
     {
         header('Content-Type: application/json; charset=utf-8');
         if ($name === "") {
-            json_encode($data, true);
+            echo json_encode($data, true);
         } else {
             extract($data);
             require $_SERVER["DOCUMENT_ROOT"] . "/src/Json_templates/{$name}.php";

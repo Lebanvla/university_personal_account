@@ -43,7 +43,6 @@ try {
     SimpleRouter::start();
 } catch (\Pecee\SimpleRouter\Exceptions\NotFoundHttpException $e) {
     http_response_code(404);
-    header("Location: http://localhost/");
     exit;
 } catch (\Exception $e) {
     log_error($e->getMessage());
