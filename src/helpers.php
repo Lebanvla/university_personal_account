@@ -1,15 +1,4 @@
 <?php
-function view(string $name, array $data = [])
-{
-    try {
-        extract($data);
-        require __DIR__ . "/Views/{$name}.php";
-    } catch (Exception $e) {
-        echo "Путь к файлу: " . __DIR__ . "/Views/{$name}.php";
-    }
-}
-
-
 function log_error(string $message)
 {
     file_put_contents($_SERVER["DOCUMENT_ROOT"] . '/logs/error.log', (new DateTime())->format('Y-m-d H:i:s') . "\t" . $message . "\r\n", FILE_APPEND);
