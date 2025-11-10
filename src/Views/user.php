@@ -5,14 +5,14 @@
     </p>
     Группа:
     <p>
-        <?= $group_id ?>
+        <?= $group ?>
     </p>
 
     <p>:
         <button onclick="getStudyPlan(<?= $id ?>)">Получить учебный план</button>
     </p>
 
-
+    <div id="study_plan"></div>
 </div>
 
 <script>
@@ -24,7 +24,7 @@
         fetch(`http://localhost/student_plan`)
             .then(response => response.json())
             .then(data => {
-                console.log(data.study_plan)
+                document.getElementById("study_plan").innerHTML = data.study_plan
             })
             .catch(error => {
                 alert("Возникла ошибка");
