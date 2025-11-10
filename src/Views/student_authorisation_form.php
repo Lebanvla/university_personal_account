@@ -41,13 +41,11 @@
             return;
         }
 
-        // Проверка пароля
         if (password.length < 7) {
             showError('password_error', 'Пароль должен содержать минимум 7 символов');
             return;
         }
 
-        // Отправка запроса
         sendAuthRequest(login, password);
     });
 
@@ -62,10 +60,8 @@
             .then(response => response.json())
             .then(data => {
                 if (data.status === 'success') {
-                    // Успешная авторизация - переходим по ссылке
                     window.location.href = data.link;
                 } else if (data.status === 'error') {
-                    // Обработка ошибок
                     handleAuthError(data.title, data.description);
                 }
             })

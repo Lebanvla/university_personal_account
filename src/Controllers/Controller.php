@@ -4,12 +4,16 @@ namespace Controllers;
 
 class Controller
 {
-    public static function json_response(string $name, array $data)
+    public static function json_response(array $data, string $name = "")
     {
         header('Content-Type: application/json; charset=utf-8');
-        extract($data);
-        require $_SERVER["DOCUMENT_ROOT"] . "/src/Json_templates/{$name}.php";
-        exit;
+        if ($name === "") {
+            json_encode($data, true);
+        } else {
+            extract($data);
+            require $_SERVER["DOCUMENT_ROOT"] . "/src/Json_templates/{$name}.php";
+            exit;
+        }
     }
 
     public static function view(string $view, array $data = [])
