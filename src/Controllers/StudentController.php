@@ -14,16 +14,15 @@ class StudentController extends Controller
 
     public function getStudyPlan()
     {
-
-        // self::json_response([
-        //     "status" => "success",
-        //     'study_plan' => [
-        //         'Первый семестр' => 'Предмет 1',
-        //         'Второй семестр' => 'Предмет 2',
-        //         'Третий семестр' => 'Предмет 3',
-        //         'Четвертый семестр' => 'Предмет 4',
-        //     ]
-        // ]);
+        $this->json_response([
+            "status" => "success",
+            'study_plan' => [
+                'Первый семестр' => 'Предмет 1',
+                'Второй семестр' => 'Предмет 2',
+                'Третий семестр' => 'Предмет 3',
+                'Четвертый семестр' => 'Предмет 4',
+            ]
+        ]);
     }
 
     public function authorisation()
